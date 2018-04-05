@@ -18,6 +18,9 @@ public class FizzBuzzGame {
 
     public String replace(int i) {
         String result = "";
+        if (Integer.toString(i).contains("3")) {
+            return "Fizz";
+        }
         if (i == 3 || i % 3 == 0) {
             result += "Fizz";
         }
