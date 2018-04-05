@@ -17,14 +17,17 @@ public class FizzBuzzGame {
     }
 
     public String replace(int i) {
+        String result = "";
         if (i == 3 || i % 3 == 0) {
-            return "Fizz";
-        } else if (i == 5 || i % 5 == 0) {
-            return "Buzz";
-        } else if (i == 7 || i % 7 == 0) {
+            result += "Fizz";
+        }
+        if (i == 5 || i % 5 == 0) {
+            result += "Buzz";
+        }
+        if (i == 7 || i % 7 == 0) {
             return "Whizz";
         }
-        return Integer.toString(i);
+        return result;
     }
 }
 
