@@ -33,6 +33,11 @@ public class FizzBuzzGameTest {
 
     @Test
     public void should_return_Fizz_when_is_the_multiple_of_3() {
-        assertEquals("Fizz", game.replace(6));
+        assertEquals("Fizz", game.replace(9));
+    }
+
+    @Test
+    public void should_return_Buzz_when_is_the_multiple_have_5() {
+        assertEquals("Buzz", game.replace(10));
     }
 }
