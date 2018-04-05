@@ -2,6 +2,12 @@ package com.thoughtworks;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+
+import java.io.ByteArrayInputStream;
+import java.lang.reflect.Field;
+import java.util.Scanner;
+
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.*;
 
@@ -13,10 +19,24 @@ public class InputReaderTest {
         reader = new InputReader();
     }
 
+    private void setInputStream(String input) throws NoSuchFieldException, IllegalAccessException {
+        Field scannerField = reader.getClass().getDeclaredField("scanner");
+        scannerField.setAccessible(true);
+        Scanner scannerWithMockedStream = new Scanner(new ByteArrayInputStream(input.getBytes()));
+        scannerField.set(reader, scannerWithMockedStream);
+    }
+
     @Test
-    public void should_read_input() {
+    public void should_read_input() throws Exception {
         reader = mock(InputReader.class);
         when(reader.read()).thenReturn("100");
         assertEquals("100", reader.read());
     }
+
+    @Test(expected = RuntimeException.class)
+    public void should_throw_RuntimeException_when_input_less_than_0() throws Exception {
+        setInputStream("-1");
+        reader.read();
+    }
+
 }
