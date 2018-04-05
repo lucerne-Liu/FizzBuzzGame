@@ -17,10 +17,15 @@ public class FizzBuzzGame {
     }
 
     public String replace(int i) {
-        if (i == 3) {
-            return "Fizz";
-        } else{
-            return "Buzz";
+        switch (i) {
+            case 3:
+                return "Fizz";
+            case 5:
+                return "Buzz";
+            case 7:
+                return "Whizz";
+            default:
+                return Integer.toString(i);
         }
     }
 }
