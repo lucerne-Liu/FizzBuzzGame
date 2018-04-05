@@ -70,4 +70,9 @@ public class FizzBuzzGameTest {
     public void should_return_Fizz_when_contains_3() {
         assertEquals("Fizz", game.replace(13));
     }
+
+    @Test
+    public void should_return_Fizz_when_contains_3_and_is_the_multiple_of_5_and_7() {
+        assertEquals("Fizz", game.replace(35));
+    }
 }
