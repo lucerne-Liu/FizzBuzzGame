@@ -11,8 +11,13 @@ public class FizzBuzzGame {
 
     }
 
+
     public List<String> getResults() {
         return results;
+    }
+
+    public String replace(int i) {
+        return "Fizz";
     }
 }
 

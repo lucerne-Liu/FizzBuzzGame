@@ -3,15 +3,17 @@ package com.thoughtworks;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.Reader;
+
 import static org.junit.Assert.*;
 
 
 public class FizzBuzzGameTest {
-    FizzBuzzGameTest game;
+    FizzBuzzGame game;
 
     @Before
     public void setup() {
-        game = new FizzBuzzGameTest();
+        game = new FizzBuzzGame();
     }
 
     @Test
