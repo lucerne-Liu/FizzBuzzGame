@@ -19,6 +19,10 @@ public class FizzBuzzGameTest {
     @Test
     public void should_return_Fizz_when_have_3() {
         assertEquals("Fizz", game.replace(3));
+    }
 
+    @Test
+    public void should_return_Buzz_when_have_5() {
+        assertEquals("Buzz", game.replace(5));
     }
 }
