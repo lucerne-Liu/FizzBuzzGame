@@ -27,7 +27,7 @@ public class FizzBuzzGameTest {
     }
 
     @Test
-    public void should_return_Buzz_when_have_7() {
+    public void should_return_Whizz_when_have_7() {
         assertEquals("Whizz", game.replace(7));
     }
 
@@ -37,7 +37,12 @@ public class FizzBuzzGameTest {
     }
 
     @Test
-    public void should_return_Buzz_when_is_the_multiple_have_5() {
+    public void should_return_Buzz_when_is_the_multiple_of_5() {
         assertEquals("Buzz", game.replace(10));
+    }
+
+    @Test
+    public void should_return_Whizz_when_is_the_multiple_of_7() {
+        assertEquals("Whizz", game.replace(14));
     }
 }

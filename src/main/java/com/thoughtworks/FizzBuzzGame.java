@@ -21,7 +21,7 @@ public class FizzBuzzGame {
             return "Fizz";
         } else if (i == 5 || i % 5 == 0) {
             return "Buzz";
-        } else if (i == 7) {
+        } else if (i == 7 || i % 7 == 0) {
             return "Whizz";
         }
         return Integer.toString(i);
