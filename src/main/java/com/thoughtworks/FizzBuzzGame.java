@@ -25,7 +25,7 @@ public class FizzBuzzGame {
             result += "Buzz";
         }
         if (i == 7 || i % 7 == 0) {
-            return "Whizz";
+            result += "Whizz";
         }
         return result;
     }
