@@ -8,7 +8,9 @@ public class FizzBuzzGame {
     private List<String> results = new ArrayList<>();
 
     public void start(int count) {
-
+        for (int i = 1; i <= count; i++) {
+            results.add(replace(i));
+        }
     }
 
 
@@ -29,6 +31,9 @@ public class FizzBuzzGame {
         }
         if (i == 7 || i % 7 == 0) {
             result += "Whizz";
+        }
+        if (result == "") {
+            result = Integer.toString(i);
         }
         return result;
     }

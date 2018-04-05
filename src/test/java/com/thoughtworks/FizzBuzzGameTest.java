@@ -3,16 +3,19 @@ package com.thoughtworks;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.io.Reader;
-
 import static org.junit.Assert.*;
+import org.junit.rules.ExpectedException;
 
+import java.util.Arrays;
+import java.util.List;
 
 public class FizzBuzzGameTest {
+    public ExpectedException exception;
     FizzBuzzGame game;
 
     @Before
     public void setup() {
+        exception =  ExpectedException.none();
         game = new FizzBuzzGame();
     }
 
@@ -74,5 +77,17 @@ public class FizzBuzzGameTest {
     @Test
     public void should_return_Fizz_when_contains_3_and_is_the_multiple_of_5_and_7() {
         assertEquals("Fizz", game.replace(35));
+    }
+
+    @Test
+    public void should_return_the_same_when_is_not_special_number() {
+        assertEquals("19", game.replace(19));
+    }
+
+    @Test
+    public void should_return_1_result_when_input_1() {
+        List<String> results = Arrays.asList("1");
+        game.start(1);
+        assertEquals(results,game.getResults());
     }
 }
