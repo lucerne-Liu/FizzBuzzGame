@@ -6,6 +6,7 @@ import java.util.List;
 
 public class FizzBuzzGame {
     private List<String> results = new ArrayList<>();
+    private InputReader reader = new InputReader();
 
     public void start(int count) {
         for (int i = 1; i <= count; i++) {
@@ -13,6 +14,11 @@ public class FizzBuzzGame {
         }
     }
 
+    public void init() throws Exception {
+        System.out.println("请输入学生个数：");
+        start(Integer.parseInt(reader.read()));
+        getResults().stream().forEach(item -> System.out.println(item));
+    }
 
     public List<String> getResults() {
         return results;

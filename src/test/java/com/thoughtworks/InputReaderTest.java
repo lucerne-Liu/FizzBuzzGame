@@ -28,14 +28,19 @@ public class InputReaderTest {
 
     @Test
     public void should_read_input() throws Exception {
-        reader = mock(InputReader.class);
-        when(reader.read()).thenReturn("100");
+        setInputStream("100");
         assertEquals("100", reader.read());
     }
 
-    @Test(expected = RuntimeException.class)
+    @Test(expected = Exception.class)
     public void should_throw_RuntimeException_when_input_less_than_0() throws Exception {
         setInputStream("-1");
+        reader.read();
+    }
+
+    @Test(expected = Exception.class)
+    public void should_throw_RuntimeException_when_input_non_digit() throws Exception {
+        setInputStream("ss");
         reader.read();
     }
 
