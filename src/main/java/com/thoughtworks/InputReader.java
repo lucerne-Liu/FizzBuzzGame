@@ -1,8 +1,11 @@
 package com.thoughtworks;
 
+import java.util.Scanner;
+
 public class InputReader {
+    private Scanner scanner = new Scanner(System.in);
 
     public String read() {
-        return "100";
+        return scanner.next();
     }
 }
